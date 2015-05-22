@@ -49,7 +49,7 @@
 
   function autoInputValueDirective($parse) {
     function link($scope, $element, $attrs) {
-      if (!$attrs.ngModel) return;
+      if (!($attrs.ngModel && $attrs.value)) return;
       var set = setter($parse, $scope, $attrs.ngModel),
           value = $element.val(),
           selected = $attrs.checked || $attrs.selected,
