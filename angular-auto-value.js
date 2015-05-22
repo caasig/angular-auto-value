@@ -52,7 +52,7 @@
       if (!$attrs.ngModel) return;
       var set = setter($parse, $scope, $attrs.ngModel),
           value = $element.val(),
-          selected = $attrs.selected,
+          selected = $attrs.checked || $attrs.selected,
           method;
       switch ($attrs.type) {
         case "button":
